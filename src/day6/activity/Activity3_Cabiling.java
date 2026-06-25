@@ -1,6 +1,4 @@
-
 package day6.activity;
-
 
 public class Activity3_Cabiling {
     public static void main(String[] args) {
@@ -45,7 +43,5 @@ public class Activity3_Cabiling {
          }else{
              System.out.println("The number is odd");
          }
-         
-        
     }
 }
