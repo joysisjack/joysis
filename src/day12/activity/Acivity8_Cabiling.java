@@ -7,21 +7,24 @@ public class Acivity8_Cabiling {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
+        // Getting all element count for array sizing
         System.out.print("Enter Number of students: ");
-        int studentCount = input.nextInt();
+        int studentCount = input.nextInt(); 
         System.out.print("Enter Number of Subjects: ");
         int subjectCount = input.nextInt();
-        input.nextLine();
+        input.nextLine(); // clearing input buffer for next usage.
         
+        // Declaring array variables with size based on previous input
         String[][] studentRecords = new String[studentCount][subjectCount+2];
         String[] tempSubjects = new String[subjectCount];
         
-        
+        // Prompt for Subject names and store it to subject array
         for (int i = 0; i < tempSubjects.length; i++) {
             System.out.print("Enter Subject name: ");
             tempSubjects[i] = input.nextLine();
         }
         
+        // Storing Student data and and grades
         for (int i = 0; i < studentRecords.length; i++) {
             System.out.print("Enter Student Name: ");
             studentRecords[i][0] = input.nextLine();
@@ -39,6 +42,7 @@ public class Acivity8_Cabiling {
         }
         
         
+        // Output Display
         System.out.println("\n===== STUDENT RECORDS =====");
 
         System.out.printf("%-15s", "Student");
