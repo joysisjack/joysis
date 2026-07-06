@@ -23,7 +23,7 @@ public class Activity11_Cabiling {
                     int roundedNumber = (int) generatedNumber;
                     if (lottoResult[i] == roundedNumber) {
                         System.out.println("Numbers Duplicated Generating new number ..\n");
-                        double newlyGeneratedRandomNumber = (Math.random() * 58);
+                        double newlyGeneratedRandomNumber = (Math.random() * 58 );
                         int newlyGeneratedNumber = (int) newlyGeneratedRandomNumber;
                         lottoResult[i] = newlyGeneratedNumber;
                     } else {
