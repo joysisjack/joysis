@@ -61,18 +61,31 @@ public class Main {
             String lastName = sc.nextLine();
             System.out.print("Address : ");
             String address = sc.nextLine();
-            System.out.print("Email : ");
-            String email = sc.nextLine();
-            System.out.print("Password : ");
-            String password = sc.nextLine();
+
+            String email;
+            do {
+                System.out.print("Email : ");
+                email = sc.nextLine();
+                if (!isValidEmail(email)) {
+                    System.out.println("Invalid email format. Please enter a valid email address.");
+                }
+            } while (!isValidEmail(email));
+
+            String password;
+            do {
+                System.out.print("Password : ");
+                password = sc.nextLine();
+                if (!isValidPassword(password)) {
+                    System.out.println("Password must be at least 8 characters");
+                }
+            } while (!isValidPassword(password));
+
             UserAccount userAccount = new UserAccount(firstName, middleName, lastName, address, email, password);
             accounts.add(userAccount);
 
         } catch (Exception e) {
             System.out.println("Something went wrong!");
-
         }
-
     }
 
     public static boolean login(Scanner sc) {
@@ -119,7 +132,7 @@ public class Main {
                     changePassword(email);
                     break;
                 case 3:
-                    // edit profile logic can be added here
+                    
                     break;
                 case 4:
                     logout();
@@ -155,13 +168,26 @@ public class Main {
     public static void changePassword(String email) {
         Scanner input = new Scanner(System.in);
         if (email.equals(user.getEmail())) {
-            System.out.print("Enter new password : ");
-            String password = input.nextLine();
+            String password;
+            do {
+                System.out.print("Enter new password : ");
+                password = input.nextLine();
+                if (!isValidPassword(password)) {
+                    System.out.println("Password must be at least 8 characters long and include letters and numbers.");
+                }
+            } while (!isValidPassword(password));
 
             user.setPassword(password);
             System.out.println("Change password Successfully!");
-
         }
+    }
+
+    public static boolean isValidEmail(String email) {
+        return email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
+    }
+
+    public static boolean isValidPassword(String password) {
+        return password.length() >= 8;
     }
 
 }
