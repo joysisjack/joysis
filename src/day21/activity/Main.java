@@ -7,8 +7,9 @@ import java.util.Scanner;
 public class Main {
 
     static List<UserAccount> accounts = new ArrayList<>();
-    static UserAccount user = new UserAccount("Romel", "Bernabe", "Cabiling", "Valenzuela", "romel@email.com", "passkoto");
-    static boolean isAuthenticated = true;
+    //static UserAccount user = new UserAccount("Romel", "Bernabe", "Cabiling", "Valenzuela", "romel@email.com", "passkoto");
+    static UserAccount user = null;
+    static boolean isAuthenticated = false;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
