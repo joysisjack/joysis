@@ -10,8 +10,8 @@ public class Main {
         mySavings.displayAccountInfo();
         myChecking.displayAccountInfo();
         
-        //mySavings.deposit(100);
-        //myChecking.deposit(100);
+        mySavings.deposit(100);
+        myChecking.deposit(100);
         myChecking.withdraw(9000);
         
         
